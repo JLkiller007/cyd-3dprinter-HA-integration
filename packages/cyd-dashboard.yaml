@@ -334,14 +334,14 @@ display:
   - platform: st7789v
     id: tft
     spi_id: lcd
+    model: Custom
+    height: 320
+    width: 240
+    offset_height: 0
+    offset_width: 0
     cs_pin: GPIO15
     dc_pin: GPIO2
     reset_pin: GPIO0
-    dimensions:
-      width: 240
-      height: 320
-      offset_height: 0
-      offset_width: 0
     transform:
       swap_xy: true
       mirror_x: true
