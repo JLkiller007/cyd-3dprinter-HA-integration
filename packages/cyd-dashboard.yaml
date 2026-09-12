@@ -287,14 +287,14 @@ globals:
 
 spi:
   - id: lcd
-    clk_pin: GPIO14
-    mosi_pin: GPIO13
-    miso_pin: GPIO12
+    clk_pin: ${pin_spi_clk}
+    mosi_pin: ${pin_spi_mosi}
+    miso_pin: ${pin_spi_miso}
 
   - id: touch
-    clk_pin: GPIO25
-    mosi_pin: GPIO32
-    miso_pin: GPIO39
+    clk_pin: ${pin_touch_clk}
+    mosi_pin: ${pin_touch_mosi}
+    miso_pin: ${pin_touch_miso}
 
 output:
   - platform: ledc
@@ -331,18 +331,25 @@ light:
     restore_mode: ALWAYS_OFF
 
 display:
-  - platform: st7789v
+  - platform: mipi_spi
     id: tft
     spi_id: lcd
-    model: Custom
-    height: 320
-    width: 240
-    offset_height: 0
-    offset_width: 0
+    model: ST7789V
     cs_pin: GPIO15
     dc_pin: GPIO2
-    reset_pin: GPIO0
+    invert_colors: false
+    color_order: bgr
+    byte_order: big_endian
+    data_rate: 20MHz
     auto_clear_enabled: false
+    color_depth: 16
+    transform:
+      swap_xy: true
+      mirror_x: true
+      mirror_y: false
+    dimensions:
+      width: 240
+      height: 320
     update_interval: never
 
 touchscreen:
@@ -3482,7 +3489,7 @@ lvgl:
     - tft
   touchscreens:
     - touchscreen_id: cyd_touch
-  buffer_size: 0%
+  buffer_size: 25%
   top_layer:
     widgets:
       - obj:
