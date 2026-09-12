@@ -348,8 +348,8 @@ display:
       mirror_x: true
       mirror_y: false
     dimensions:
-      width: 240
-      height: 320
+      width: "240"
+      height: "320"
     update_interval: never
 
 touchscreen:
