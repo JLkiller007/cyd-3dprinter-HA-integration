@@ -342,7 +342,6 @@ display:
     cs_pin: GPIO15
     dc_pin: GPIO2
     reset_pin: GPIO0
-    buffer_size: 0
     auto_clear_enabled: false
     update_interval: never
 
@@ -3483,7 +3482,7 @@ lvgl:
     - tft
   touchscreens:
     - touchscreen_id: cyd_touch
-  buffer_size: 25%
+  buffer_size: 0%
   top_layer:
     widgets:
       - obj:
