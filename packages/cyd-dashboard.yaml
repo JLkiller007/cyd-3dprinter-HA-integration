@@ -12,7 +12,8 @@ esphome:
       - lambda: |-
           id(last_user_activity_ms) = millis();
           id(is_sleeping) = false;
-      - script.execute: apply_backlight_from_state
+      - script.execute: 
+          id: apply_backlight_from_state
       # ── Step 1: System init ──────────────────────────
       - lvgl.label.update:
           id: loading_step1_icon
