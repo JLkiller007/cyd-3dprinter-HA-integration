@@ -345,8 +345,8 @@ display:
     color_depth: 16
     transform:
       swap_xy: true
-      mirror_x: true
-      mirror_y: false
+      mirror_x: false
+      mirror_y: true
     dimensions:
       width: ${display_w}
       height: ${display_h}
@@ -369,8 +369,8 @@ touchscreen:
       y_max: ${touch_cal_y_max}
     transform:
       swap_xy: ${touch_swap_xy}
-      mirror_x: ${touch_mirror_x}
-      mirror_y: ${touch_mirror_y}
+      mirror_x: false
+      mirror_y: true
     on_touch:
       - lambda: |-
           id(last_user_activity_ms) = millis();
