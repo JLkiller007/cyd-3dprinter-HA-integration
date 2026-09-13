@@ -369,7 +369,7 @@ touchscreen:
       y_max: ${touch_cal_y_max}
     transform:
       swap_xy: ${touch_swap_xy}
-      mirror_x: false
+      mirror_x: true
       mirror_y: true
     on_touch:
       - lambda: |-
