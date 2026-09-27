@@ -369,8 +369,8 @@ touchscreen:
       y_max: 3450
     transform:
       swap_xy: true
-      mirror_x: false
-      mirror_y: false
+      mirror_x: true
+      mirror_y: true
     on_touch:
       - lambda: |-
           id(last_user_activity_ms) = millis();
