@@ -361,16 +361,16 @@ touchscreen:
     # Poll the controller continuously because some CYD IRQ lines only report
     # the initial press and miss drag updates needed for swipe gestures.
     update_interval: 30ms
-    threshold: 400
+    threshold: 100
     calibration:
-      x_min: 300
-      x_max: 3800
-      y_min: 300
-      y_max: 3800
+      x_min: 700
+      x_max: 3550
+      y_min: 3450
+      y_max: 400
     transform:
-      swap_xy: false
+      swap_xy: true
       mirror_x: false
-      mirror_y: true
+      mirror_y: false
     on_touch:
       - lambda: |-
           id(last_user_activity_ms) = millis();
