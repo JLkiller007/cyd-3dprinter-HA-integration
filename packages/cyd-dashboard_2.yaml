@@ -365,12 +365,12 @@ touchscreen:
     calibration:
       x_min: 700
       x_max: 3550
-      y_min: 3450
-      y_max: 400
+      y_min: 400
+      y_max: 3450
     transform:
       swap_xy: true
       mirror_x: false
-      mirror_y: false
+      mirror_y: true
     on_touch:
       - lambda: |-
           id(last_user_activity_ms) = millis();
