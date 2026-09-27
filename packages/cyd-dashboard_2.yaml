@@ -368,7 +368,7 @@ touchscreen:
       y_min: 300
       y_max: 3800
     transform:
-      swap_xy: true
+      swap_xy: false
       mirror_x: false
       mirror_y: true
     on_touch:
